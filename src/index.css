@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+@layer utilities {
+  .pixel-button {
+    @apply relative transition-all duration-200 rounded-lg;
+    image-rendering: pixelated;
+    border: 3px solid;
+    border-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.1),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .pixel-button:hover {
+    @apply brightness-110;
+    transform: translateY(-2px);
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(255, 255, 255, 0.15),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .pixel-button:active {
+    transform: translateY(0);
+    box-shadow: 
+      0 2px 0 rgba(0, 0, 0, 0.4),
+      0 0 8px rgba(255, 255, 255, 0.1),
+      inset 0 0 8px rgba(255, 255, 255, 0.05);
+  }
+  
+  .pixel-button-active {
+    @apply brightness-125;
+    box-shadow: 
+      0 4px 0 rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(255, 255, 255, 0.2),
+      inset 0 0 12px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Specific glow colors for different button types */
+  .bg-fuchsia-500.pixel-button {
+    box-shadow: 
+      0 0 10px rgba(236, 72, 153, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-fuchsia-500.pixel-button:hover {
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(236, 72, 153, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .bg-cyan-500.pixel-button {
+    box-shadow: 
+      0 0 10px rgba(6, 182, 212, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-cyan-500.pixel-button:hover {
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(6, 182, 212, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .bg-purple-500.pixel-button {
+    box-shadow: 
+      0 0 10px rgba(168, 85, 247, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-purple-500.pixel-button:hover {
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(168, 85, 247, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .bg-yellow-500.pixel-button {
+    box-shadow: 
+      0 0 10px rgba(234, 179, 8, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-yellow-500.pixel-button:hover {
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(234, 179, 8, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .bg-pink-500.pixel-button {
+    box-shadow: 
+      0 0 10px rgba(236, 72, 153, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-pink-500.pixel-button:hover {
+    box-shadow: 
+      0 6px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px rgba(236, 72, 153, 0.4),
+      inset 0 0 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  .pixel-card {
+    @apply relative rounded-xl;
+    border: 3px solid;
+    border-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(255, 255, 255, 0.2);
+    image-rendering: pixelated;
+  }
+  
+  .pixel-border {
+    @apply rounded-md;
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(255, 255, 255, 0.3);
+    image-rendering: pixelated;
+  }
+  
+  .pixel-text-3d {
+    text-shadow: 
+      3px 3px 0px rgba(0, 0, 0, 0.8),
+      6px 6px 0px rgba(0, 0, 0, 0.4),
+      1px 1px 0px rgba(255, 255, 255, 0.2);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-pulse-slow-reverse {
+    animation: pulse-slow-reverse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-reverse {
+    animation: float-reverse 7s ease-in-out infinite;
+  }
+  
+  .animate-slide-right {
+    animation: slide-right 8s linear infinite;
+  }
+  
+  .animate-slide-left {
+    animation: slide-left 10s linear infinite;
+  }
+  
+  .animate-scan-lines {
+    animation: scan-lines 2s linear infinite;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(12deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1) rotate(15deg);
+  }
+}
+
+@keyframes pulse-slow-reverse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(-12deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1) rotate(-15deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(-5deg);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scan-lines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border: 2px solid #0891b2;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}

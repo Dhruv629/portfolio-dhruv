@@ -1,0 +1,95 @@
+import React from 'react';
+import { ExternalLink, Github, Star } from 'lucide-react';
+
+export const Projects: React.FC = () => {
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      status: "Live",
+      color: "bg-fuchsia-500"
+    },
+    {
+      title: "Task Management App",
+      description: "Real-time collaboration tool with WebSocket integration",
+      tech: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
+      status: "Beta",
+      color: "bg-purple-500"
+    },
+    {
+      title: "Weather Dashboard",
+      description: "Interactive weather visualization with charts and maps",
+      tech: ["React", "D3.js", "API Integration", "CSS3"],
+      status: "Live",
+      color: "bg-cyan-500"
+    },
+    {
+      title: "Social Media Analytics",
+      description: "Data analytics platform for social media insights",
+      tech: ["Python", "Flask", "Pandas", "Chart.js"],
+      status: "Development",
+      color: "bg-yellow-500"
+    },
+    {
+      title: "Mobile Game",
+      description: "Retro-style mobile game built with React Native",
+      tech: ["React Native", "Redux", "Expo", "Animation"],
+      status: "Live",
+      color: "bg-pink-500"
+    },
+    {
+      title: "Portfolio Website",
+      description: "Custom portfolio with retro gaming aesthetic",
+      tech: ["React", "TypeScript", "Tailwind", "Animations"],
+      status: "Live",
+      color: "bg-purple-500"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen py-12">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="pixel-text-3d text-3xl md:text-5xl font-bold text-center mb-12 text-white">
+          PROJECTS
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className="pixel-card bg-slate-700/90 p-6 hover:scale-105 transition-transform">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
+                <div className={`pixel-button ${project.color} text-white py-1 px-3 text-xs`}>
+                  {project.status}
+                </div>
+              </div>
+              
+              <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, techIndex) => (
+                  <span key={techIndex} className="bg-slate-700 text-cyan-400 px-2 py-1 text-xs font-bold pixel-border">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              <div className="flex gap-3">
+                <button className="pixel-button bg-fuchsia-500 text-white py-2 px-4 text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                  <Github size={14} />
+                  CODE
+                </button>
+                <button className="pixel-button bg-purple-500 text-white py-2 px-4 text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                  <ExternalLink size={14} />
+                  LIVE
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
