@@ -66,7 +66,7 @@ export const LeetCodeSection: React.FC = () => {
       {loading && <div className="text-slate-400">Loading...</div>}
       {error && <div className="text-red-400">{error}</div>}
       {profile && (
-        <div className="pixel-card bg-slate-700/90 p-8 rounded-xl shadow-lg flex flex-col items-center gap-6 w-full max-w-xl">
+        <div className="pixel-card bg-slate-700/90 p-8 rounded-xl shadow-lg flex flex-col items-center gap-6 w-full">
           <div className="flex flex-col items-center gap-2">
             <SiLeetcode className="text-yellow-400 text-5xl mb-2" />
             <span className="text-lg font-bold text-white">{profile.username}</span>
