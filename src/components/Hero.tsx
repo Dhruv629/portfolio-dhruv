@@ -26,7 +26,7 @@ const recentProjects = [
 
 export const Hero: React.FC = () => {
   return (
-    <div className="min-h-screen w-full flex flex-col gap-12 justify-center items-center px-0 md:px-8 py-1">
+    <div className="min-h-[calc(100vh-40px)] md:min-h-[calc(100vh-40px)] w-full flex flex-col gap-12 justify-center items-center px-0 md:px-8 py-1">
       {/* Top: Photo, Name, Summary */}
       <div className="w-full flex flex-col items-center justify-center gap-6 max-w-2xl mx-auto">
         <img
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
           <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 text-center mb-0 max-w-xl">
             Hi! I'm Dhruv, a software developer who crafts modern, user-friendly web apps with a love for clean code and creative design.
           </p>
-        </div>
+      </div>
       </div>
     </div>
   );

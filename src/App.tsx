@@ -29,9 +29,9 @@ function App() {
     <div className="min-h-screen relative overflow-hidden dark bg-slate-900">
       <Background />
       <PixelGrid />
-      {/* Hero section fixed to the left of the viewport, with subtle gradient bg */}
+      {/* Hero section - fixed on desktop, inline on mobile */}
       <aside
-        className="fixed top-0 left-0 h-screen z-30 flex items-start"
+        className="fixed top-0 left-0 h-screen z-30 flex items-start hidden md:block"
         style={{ width: HERO_WIDTH, background: 'linear-gradient(135deg, rgba(34,193,195,0.12) 0%, rgba(253,187,45,0.10) 100%)' }}
       >
         {/* Subtle animated grid/scanline overlay */}
@@ -44,10 +44,20 @@ function App() {
           <Hero />
         </div>
       </aside>
-      {/* Main content, with left margin to avoid overlap with Hero */}
-      <div className="relative z-10" style={{ marginLeft: HERO_WIDTH }}>
-        {/* Navigation in the top-right */}
-        <div className="flex justify-end pt-6 pr-6 items-center gap-4">
+      {/* Mobile Hero section */}
+      <div className="block md:hidden w-full py-4 relative z-10">
+        {/* Mobile navigation in top-right of Hero */}
+        <div className="absolute top-4 right-4 z-50">
+          <Header />
+        </div>
+        <div className="container mx-auto px-4">
+          <Hero />
+        </div>
+      </div>
+      {/* Main content, full-width on mobile, with left margin on desktop */}
+      <div className="relative z-10 md:ml-[480px]">
+        {/* Desktop navigation in the top-right corner of main content */}
+        <div className="flex justify-end pt-6 pr-6 items-center gap-4 hidden md:flex">
           <Header />
         </div>
         {/* Scroll indication arrows */}
@@ -68,7 +78,8 @@ function App() {
             <ChevronDown size={28} />
           </button>
         )}
-        <main className="container mx-auto px-4 py-4 pt-24 space-y-4 pb-0">
+        <main className="container mx-auto px-4 py-4 pt-4 md:pt-24 space-y-4 pb-0">
+          <div className="my-8 border-t-4 border-cyan-500 rounded-full md:hidden"></div>
           <section id="about"><About /></section>
           <div className="my-8 border-t-4 border-purple-500 rounded-full"></div>
           <section id="projects"><Projects /></section>

@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-end gap-4">
+    <div className="flex flex-col md:flex-row justify-end gap-2 md:gap-4">
       {menuItems.map((item) => {
         const Icon = item.icon;
         let colorClass = '';
@@ -32,13 +32,13 @@ export const Header: React.FC = () => {
             onClick={() => handleScroll(item.id)}
             className={`
               pixel-button ${colorClass}
-              text-white font-bold py-3 px-6 text-sm
+              text-white font-bold py-2 md:py-3 px-3 md:px-6 text-xs md:text-sm
               transition-all duration-200 hover:scale-105
-              flex items-center gap-2
+              flex items-center gap-1 md:gap-2
             `}
           >
-            <Icon size={16} />
-            {item.label}
+            <Icon size={14} className="md:w-4 md:h-4" />
+            <span className="text-xs md:text-sm">{item.label}</span>
           </button>
         );
       })}

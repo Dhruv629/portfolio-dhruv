@@ -10,10 +10,10 @@ export const Background: React.FC<{ theme?: 'light' | 'dark' }> = ({ theme = 'da
       <div className="absolute inset-0 overflow-hidden">
         {theme === 'dark' ? (
           <>
-            <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-fuchsia-500/30 via-pink-600/20 to-transparent rounded-full animate-pulse-slow transform rotate-12"></div>
-            <div className="absolute -top-1/3 -right-1/3 w-2/3 h-2/3 bg-gradient-to-bl from-cyan-500/30 via-blue-600/20 to-transparent rounded-full animate-pulse-slow-reverse transform -rotate-12"></div>
-            <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-purple-500/20 via-purple-600/15 to-transparent rounded-full animate-float"></div>
-            <div className="absolute -bottom-1/3 -right-1/2 w-3/4 h-3/4 bg-gradient-to-tl from-yellow-500/25 via-yellow-600/15 to-transparent rounded-full animate-float-reverse"></div>
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-fuchsia-500/30 via-pink-600/20 to-transparent rounded-full animate-pulse-slow transform rotate-12"></div>
+        <div className="absolute -top-1/3 -right-1/3 w-2/3 h-2/3 bg-gradient-to-bl from-cyan-500/30 via-blue-600/20 to-transparent rounded-full animate-pulse-slow-reverse transform -rotate-12"></div>
+        <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-purple-500/20 via-purple-600/15 to-transparent rounded-full animate-float"></div>
+        <div className="absolute -bottom-1/3 -right-1/2 w-3/4 h-3/4 bg-gradient-to-tl from-yellow-500/25 via-yellow-600/15 to-transparent rounded-full animate-float-reverse"></div>
           </>
         ) : (
           <>
